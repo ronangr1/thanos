@@ -15,10 +15,12 @@ class UpgradeSchema implements UpgradeSchemaInterface
      */
     private ResourceConnection $resource;
 
+    /**
+     * @param \Magento\Framework\App\ResourceConnection $resource
+     */
     public function __construct(
         ResourceConnection $resource
-    )
-    {
+    ) {
         $this->resource = $resource;
     }
 
