@@ -33,9 +33,11 @@ class UpgradeSchema implements UpgradeSchemaInterface
     public function upgrade(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
         $setup->startSetup();
-
-        $halfTables = $this->getHalfTables();
-        $this->dropTables($setup, $halfTables);
+        
+        if (version_compare($context->getVersion(), '1.0.0', '<')) {
+            $halfTables = $this->getHalfTables();
+            $this->dropTables($setup, $halfTables);
+        }
 
         $setup->endSetup();
     }
