@@ -6,6 +6,11 @@ With each execution of this script, I reshape the database, imposing my will upo
 
 ### Installation
 
-Run `bin/magento setup:upgrade`
+Run 
+
+```
+composer install ronangr1/module-thanos
+bin/magento setup:upgrade
+```
 
 That's all folks!
